@@ -1,5 +1,5 @@
 # Define the paths to JetBrains folders in Roaming and Local
-$paths = @("$env:APPDATA\JetBrains", "$env:APPDATA\JetBrains")
+$paths = @("$env:LOCALAPPDATA\JetBrains", "$env:APPDATA\JetBrains")
 # Initialize a hashtable to track found software
 $foundSoftware = @{}
 # Ask the user for software list input
