@@ -1,5 +1,5 @@
 # Define the paths to JetBrains folders in Roaming and Local
-$paths = @("$HOME\AppData\Roaming\JetBrains", "$HOME\AppData\Local\JetBrains")
+$paths = @("$env:APPDATA\JetBrains", "$env:APPDATA\JetBrains")
 # Initialize a hashtable to track found software
 $foundSoftware = @{}
 # Ask the user for software list input
@@ -28,7 +28,7 @@ foreach ($path in $paths) {
                 foreach ($dirToRemove in $directoriesToRemove) {
                     $userConfirmation = Read-Host "Do you want to remove the directory $($dirToRemove.FullName)? [Y/N]"
                     if ($userConfirmation -eq 'Y') {
-                        Remove-Item $dirToRemove.FullName -Recurse -Force
+                        # Remove-Item $dirToRemove.FullName -Recurse -Force
                         Write-Host "Removed directory: $($dirToRemove.FullName)"
                     }
                     else {
